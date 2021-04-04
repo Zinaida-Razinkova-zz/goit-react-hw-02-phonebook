@@ -3,6 +3,7 @@ import ContactForm from "./components/ContactForm/ContactForm";
 import Filter from "./components/Filter/Filter";
 import ContactList from "./components/ContactList/ContactList";
 import shortid from "shortid";
+import styles from "./App.module.css";
 
 class App extends Component {
   state = {
@@ -58,13 +59,13 @@ class App extends Component {
 
     return (
       <>
-        <div>
-          <h1>Phonebook</h1>
+        <div className={styles.appConteiner}>
+          <h1 className={styles.text}>Phonebook</h1>
           <ContactForm
             formSubmitHandler={this.formSubmitHandler}
             onAddContact={this.addContact}
           />
-          <h2>Contacts</h2>
+          <h2 className={styles.text}>Contacts</h2>
           <Filter value={filter} onChange={this.changeFilter} />
           <ContactList
             contacts={contactsFilter}
